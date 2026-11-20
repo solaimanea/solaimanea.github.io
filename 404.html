@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darsi</title>
+<!-- Adresse mal tapée (majuscule ajoutée par le téléphone, « darsi » oublié…) : on renvoie vers la bonne appli.
+     Pour ajouter une appli plus tard, l'ajouter dans la liste APPS. -->
+<script>
+(function () {
+  var APPS = ['darsi'];
+  var morceaux = location.pathname.split('/').filter(Boolean);
+  var premier = (morceaux[0] || '').toLowerCase();
+  if (APPS.indexOf(premier) >= 0) {
+    morceaux[0] = premier;                       // /Darsi/xxx -> /darsi/xxx
+    var cible = '/' + morceaux.join('/');
+    if (morceaux.length === 1) cible += '/';
+    if (cible !== location.pathname) { location.replace(cible + location.search + location.hash); return; }
+  }
+  location.replace('/darsi/');                   // toute autre adresse -> Darsi
+})();
+</script>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#03211a;color:#f3eee2;font:16px -apple-system,system-ui,sans-serif}a{color:#e8be6e}</style>
+</head>
+<body><p>Ouverture de <a href="/darsi/">Darsi</a>…</p></body>
+</html>
