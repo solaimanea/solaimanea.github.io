@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.jinastudios.darsi",
+    "sha256_cert_fingerprints": ["B9:E1:90:A5:44:BB:3E:58:37:F5:A1:F4:F3:34:66:61:6F:6C:6D:F5:EB:A5:3A:18:61:CC:FA:9F:5D:EB:7A:0A"]
+  }
+}]
